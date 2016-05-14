@@ -1,12 +1,16 @@
 package com.challengers.trackmyorder;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.view.View;
 import android.widget.Button;
 
 public class DBoy_main_menu extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,14 +21,22 @@ public class DBoy_main_menu extends AppCompatActivity {
             myOrdersButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    PopupMenu popupMenu = new PopupMenu(DBoy_main_menu.this, view);
-                    String orders[] = {"Order1001", "Order1002", "Order1003", "Order1004"};
-                    for (String order : orders) {
-                        popupMenu.getMenu().add(order);
-                    }
-                    popupMenu.show();
+                PickOrderDialog pickOrderDialog = new PickOrderDialog();
+                    pickOrderDialog.show(getFragmentManager(),"Pick Order Dialog");
+
+
                 }
             });
         }
     }
+
+
+
+
+
+
+
+
+
+
 }
