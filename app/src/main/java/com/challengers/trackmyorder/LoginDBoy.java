@@ -1,8 +1,8 @@
 package com.challengers.trackmyorder;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,7 +27,7 @@ public class LoginDBoy extends AppCompatActivity {
      userName = userIdEditText.getText().toString();
      userPass = userPassEditText.getText().toString();
 
-     if(userName.equals("cool") && userPass.equals("cool123")) {
+     if(userName.equals("c") && userPass.equals("c")) {
 
          startActivity(new Intent(LoginDBoy.this,DBoy_main_menu.class));
      } else {

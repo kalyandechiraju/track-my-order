@@ -17,7 +17,6 @@
         android:background="#585656"
         android:textColor="#fefefe"
         android:gravity="center"
-
         android:textSize="36sp"
         android:textStyle="bold"
         style="@style/Base.TextAppearance.AppCompat.Title"
@@ -38,7 +37,6 @@
         android:background="#585656"
         android:textColor="#fefefe"
         android:gravity="center"
-        android:onClick="orderListPopUpMenu"
         android:textSize="36sp"
         android:textStyle="bold"
         style="@style/Base.TextAppearance.AppCompat.Title"

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/TrackMyOrder.iml" filepath="$PROJECT_DIR$/TrackMyOrder.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/track-my-order.iml" filepath="$PROJECT_DIR$/track-my-order.iml" />
     </modules>
   </component>
 </project>
