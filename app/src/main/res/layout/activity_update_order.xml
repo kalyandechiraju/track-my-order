@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.challengers.trackmyorder.UpdateOrderActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Going To Deliver"
+        android:id="@+id/GTDeliver"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:background="#686565"
+        android:textColor="#fefcfc"
+        android:layout_marginTop="62dp"
+        android:onClick="GToDeliver"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Picked Up"
+        android:id="@+id/button2"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:background="#686565"
+        android:textColor="#fefcfc"
+        android:onClick="PickedUpOrder"
+        android:layout_below="@+id/GTDeliver"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Delivered "
+        android:id="@+id/button3"
+        android:layout_marginTop="56dp"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:onClick="deliveredOrder"
+        android:background="#686565"
+        android:textColor="#fefcfc"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2" />
+</RelativeLayout>
