@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginDBoy"></activity>
+        <activity android:name=".LoginDBoy" />
+        <activity android:name=".DBoy_main_menu"></activity>
     </application>
 
 </manifest>

@@ -7,14 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.challengers.trackmyorder.MainActivity">
+    tools:context="com.challengers.trackmyorder.DBoy_main_menu">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:text="Delivery Boy"
-        android:onClick="deliveryBoy"
-
+        android:text="My Order"
+        android:id="@+id/dboy_my_order"
         android:background="#585656"
         android:textColor="#fefefe"
         android:gravity="center"
@@ -26,24 +25,27 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="135dp"
-        android:layout_alignRight="@+id/User"
-        android:layout_alignEnd="@+id/User" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-   <Button
-    android:layout_width="wrap_content"
-    android:layout_height="60dp"
-    android:text="User"
-    android:id="@+id/User"
-       android:background="#585656"
-    android:textColor="#fefefe"
-    android:gravity="center"
 
-    android:textSize="36sp"
-    android:textStyle="bold"
-       style="@style/Base.TextAppearance.AppCompat.Title"
-       android:layout_centerVertical="true"
-       android:layout_alignParentLeft="true"
-       android:layout_alignParentStart="true"
-       android:layout_alignParentRight="true"
-       android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Update Status"
+        android:id="@+id/dboy_update_status"
+        android:background="#585656"
+        android:textColor="#fefefe"
+        android:gravity="center"
+        android:onClick="orderListPopUpMenu"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        style="@style/Base.TextAppearance.AppCompat.Title"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/dboy_my_order"
+        android:layout_alignEnd="@+id/dboy_my_order" />
+
 </RelativeLayout>
