@@ -27,15 +27,4 @@ public class DBoy_main_menu extends AppCompatActivity {
             });
         }
     }
-
-    public void orderListPopUpMenu(View v){
-        PopupMenu popupMenu = new PopupMenu(getApplicationContext(),v);
-        int group_id=1;
-        String orders[] = {"A1","A2","A3","A4","A5","A6","A7","A8","A9"};
-
-        for (String order : orders) {
-            popupMenu.getMenu().add(order);
-        }
-        popupMenu.show();
-    }
 }
