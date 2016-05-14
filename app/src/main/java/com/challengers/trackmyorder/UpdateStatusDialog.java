@@ -46,6 +46,7 @@ String[] orderList;
             public void onClick(DialogInterface dialog, int which) {
                 // User clicked OK, so save the mSelectedItems results somewhere
                 // or return them to the component that opened the dialog
+                // here we call do updation of data in database
 
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
