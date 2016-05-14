@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.challengers.trackmyorder.util.Constants;
+
 public class LoginDBoy extends AppCompatActivity {
     EditText userIdEditText,userPassEditText;
     String userName,userPass;
@@ -22,10 +24,13 @@ public class LoginDBoy extends AppCompatActivity {
     public void doLogin(View v){
         userName = userIdEditText.getText().toString();
         userPass = userPassEditText.getText().toString();
-        if(userName.equals("c") && userPass.equals("c")) {
-            startActivity(new Intent(LoginDBoy.this,DBoy_main_menu.class));
+        String usernameString = "delboy1";
+        if(userName.equals(usernameString) && userPass.equals("d")) {
+            Intent intent = new Intent(this, DBoy_main_menu.class);
+            intent.putExtra(Constants.CURRENT_DELBOY, usernameString);
+            startActivity(intent);
         } else {
-            Toast.makeText(this,"Wrong user name and Password",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Wrong Username or Password",Toast.LENGTH_SHORT).show();
         }
     }
 }

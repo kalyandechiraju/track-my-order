@@ -1,25 +1,30 @@
 package com.challengers.trackmyorder.model;
 
+import io.realm.RealmObject;
+
 /**
  * Copyright (c) 2016 Kalyan Dechiraju
  * Created by kalyandechiraju on 14/05/16.
  */
-public class Order {
-    private String orderid;
+public class Order extends RealmObject{
+    private String orderId;
     private String item;
     private String status;
 
-    public Order(String orderid, String item) {
-        this.orderid = orderid;
-        this.item = item;
+    public String getOrderId() {
+        return orderId;
     }
 
-    public String getOrderid() {
-        return orderid;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getItem() {
         return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
     }
 
     public String getStatus() {

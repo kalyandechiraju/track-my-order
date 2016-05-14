@@ -1,41 +1,39 @@
 package com.challengers.trackmyorder.model;
 
+import java.util.List;
+
+import io.realm.RealmObject;
+
 /**
  * Copyright (c) 2016 Kalyan Dechiraju
  * Created by kalyandechiraju on 14/05/16.
  */
-public class DelBoy {
+public class DelBoy extends RealmObject{
     private String id;
     private String name;
-    private String currentLocation;
-    private Order[] currentOrders;
-
-    public DelBoy(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private List<String> currentOrderIds;
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getCurrentLocation() {
-        return currentLocation;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
+    public List<String> getCurrentOrderIds() {
+        return currentOrderIds;
     }
 
-    public Order[] getCurrentOrders() {
-        return currentOrders;
-    }
-
-    public void setCurrentOrders(Order[] currentOrders) {
-        this.currentOrders = currentOrders;
+    public void setCurrentOrderIds(List<String> currentOrderIds) {
+        this.currentOrderIds = currentOrderIds;
     }
 }
