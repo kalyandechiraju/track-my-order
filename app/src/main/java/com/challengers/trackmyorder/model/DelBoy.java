@@ -9,7 +9,7 @@ import io.realm.RealmObject;
 public class DelBoy extends RealmObject{
     private String id;
     private String name;
-    private String[] currentOrderIds;
+    private String currentOrderIds;
 
     public String getId() {
         return id;
@@ -27,11 +27,11 @@ public class DelBoy extends RealmObject{
         this.name = name;
     }
 
-    public String[] getCurrentOrderIds() {
+    public String getCurrentOrderIds() {
         return currentOrderIds;
     }
 
-    public void setCurrentOrderIds(String[] currentOrderIds) {
+    public void setCurrentOrderIds(String currentOrderIds) {
         this.currentOrderIds = currentOrderIds;
     }
 }

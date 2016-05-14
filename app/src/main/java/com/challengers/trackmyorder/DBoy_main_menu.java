@@ -31,7 +31,8 @@ public class DBoy_main_menu extends AppCompatActivity {
 
             //Get the data from the local DB
             Realm realm = Realm.getDefaultInstance();
-            orders = realm.where(DelBoy.class).equalTo("id", username).findFirst().getCurrentOrderIds();
+            String orderList = realm.where(DelBoy.class).equalTo("id", username).findFirst().getCurrentOrderIds();
+            orders = orderList.split(Constants.LOCATION_DELIMITER);
         } else {
             finish();
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();

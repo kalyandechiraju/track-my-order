@@ -70,9 +70,13 @@ public class AppClass extends Application {
         orderList.add(order2);
         orderList.add(order3);
 
-        String[] orderIdList = new String[orderList.size()];
-        for (int j = 0; j < orderList.size(); j++) {
-            orderIdList[j] = (orderList.get(j).getOrderId());
+        String orderIdList = "";
+        for (Order orders : orderList) {
+            if (orderIdList.equals("")) {
+                orderIdList = orders.getOrderId();
+            } else {
+                orderIdList = orderIdList + Constants.LOCATION_DELIMITER + orders.getOrderId();
+            }
         }
         delBoy.setCurrentOrderIds(orderIdList);
 
