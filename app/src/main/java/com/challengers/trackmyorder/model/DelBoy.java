@@ -1,7 +1,5 @@
 package com.challengers.trackmyorder.model;
 
-import java.util.List;
-
 import io.realm.RealmObject;
 
 /**
@@ -11,7 +9,7 @@ import io.realm.RealmObject;
 public class DelBoy extends RealmObject{
     private String id;
     private String name;
-    private List<String> currentOrderIds;
+    private String[] currentOrderIds;
 
     public String getId() {
         return id;
@@ -29,11 +27,11 @@ public class DelBoy extends RealmObject{
         this.name = name;
     }
 
-    public List<String> getCurrentOrderIds() {
+    public String[] getCurrentOrderIds() {
         return currentOrderIds;
     }
 
-    public void setCurrentOrderIds(List<String> currentOrderIds) {
+    public void setCurrentOrderIds(String[] currentOrderIds) {
         this.currentOrderIds = currentOrderIds;
     }
 }

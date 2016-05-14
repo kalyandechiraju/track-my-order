@@ -70,9 +70,9 @@ public class AppClass extends Application {
         orderList.add(order2);
         orderList.add(order3);
 
-        List<String> orderIdList = new ArrayList<>(orderList.size());
-        for (Order orders : orderList) {
-            orderIdList.add(orders.getOrderId());
+        String[] orderIdList = new String[orderList.size()];
+        for (int j = 0; j < orderList.size(); j++) {
+            orderIdList[j] = (orderList.get(j).getOrderId());
         }
         delBoy.setCurrentOrderIds(orderIdList);
 

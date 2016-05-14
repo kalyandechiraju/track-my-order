@@ -12,8 +12,6 @@ import com.challengers.trackmyorder.service.LocationUpdateService;
 import com.challengers.trackmyorder.util.Constants;
 import com.challengers.trackmyorder.util.Prefs;
 
-import java.util.List;
-
 import io.realm.Realm;
 
 public class DBoy_main_menu extends AppCompatActivity {
@@ -33,13 +31,7 @@ public class DBoy_main_menu extends AppCompatActivity {
 
             //Get the data from the local DB
             Realm realm = Realm.getDefaultInstance();
-            List<String> orderIdList = realm.where(DelBoy.class).equalTo("id", username).findFirst().getCurrentOrderIds();
-
-            //Convert into an array of order ids to pass into dialog
-            orders = new String[orderIdList.size()];
-            for (int i = 0; i < orderIdList.size(); i++) {
-                orders[i] = orderIdList.get(i);
-            }
+            orders = realm.where(DelBoy.class).equalTo("id", username).findFirst().getCurrentOrderIds();
         } else {
             finish();
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
