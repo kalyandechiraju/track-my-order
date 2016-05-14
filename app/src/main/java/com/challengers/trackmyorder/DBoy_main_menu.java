@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class DBoy_main_menu extends AppCompatActivity {
 
+    String orders[] = {"Order1001", "Order1002", "Order1003", "Order1004"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class DBoy_main_menu extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                 PickOrderDialog pickOrderDialog = new PickOrderDialog();
+                    pickOrderDialog.setOrders(orders);
                     pickOrderDialog.show(getFragmentManager(),"Pick Order Dialog");
 
 
