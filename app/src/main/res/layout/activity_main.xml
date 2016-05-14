@@ -9,8 +9,40 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.challengers.trackmyorder.MainActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="60dp"
+        android:text="Delivery Boy"
+        android:id="@+id/deliveryboy"
+        android:background="#585656"
+        android:textColor="#fefefe"
+        android:gravity="center"
+
+        android:textSize="36sp"
+        android:textStyle="bold"
+        style="@style/Base.TextAppearance.AppCompat.Title"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="135dp"
+        android:layout_alignRight="@+id/User"
+        android:layout_alignEnd="@+id/User" />
+
+   <Button
+    android:layout_width="wrap_content"
+    android:layout_height="60dp"
+    android:text="User"
+    android:id="@+id/User"
+       android:background="#585656"
+    android:textColor="#fefefe"
+    android:gravity="center"
+
+    android:textSize="36sp"
+    android:textStyle="bold"
+       style="@style/Base.TextAppearance.AppCompat.Title"
+       android:layout_centerVertical="true"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentEnd="true" />
 </RelativeLayout>
