@@ -5,6 +5,7 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ String[] orderList;
                 // User clicked OK, so save the mSelectedItems results somewhere
                 // or return them to the component that opened the dialog
                 // here we call do updation of data in database
-
+                Toast.makeText(getActivity(),checkedItems.get(0),Toast.LENGTH_SHORT).show();
             }
         }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override

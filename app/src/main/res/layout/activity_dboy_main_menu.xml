@@ -39,6 +39,7 @@
         android:gravity="center"
         android:textSize="36sp"
         android:textStyle="bold"
+        android:onClick="launchUpdateOrderStatusActivity"
         style="@style/Base.TextAppearance.AppCompat.Title"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"

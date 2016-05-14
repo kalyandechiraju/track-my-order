@@ -34,9 +34,10 @@ public class DBoy_main_menu extends AppCompatActivity {
             String orderList = realm.where(DelBoy.class).equalTo("id", username).findFirst().getCurrentOrderIds();
             orders = orderList.split(Constants.LOCATION_DELIMITER);
         } else {
-            finish();
             Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
+            finish();
         }
+
         Button myOrdersButton = (Button) findViewById(R.id.dboy_my_order);
         if(myOrdersButton != null) {
             myOrdersButton.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +53,11 @@ public class DBoy_main_menu extends AppCompatActivity {
 
 
 
+public void launchUpdateOrderStatusActivity(View v){
 
+    startActivity(new Intent(DBoy_main_menu.this,UpdateOrderActivity.class));
+
+}//launchUpdateOrderStatusActivity
 
 
 
