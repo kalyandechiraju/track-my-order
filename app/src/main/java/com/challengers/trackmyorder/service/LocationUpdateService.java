@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.PowerManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
@@ -26,7 +25,7 @@ import com.google.android.gms.location.LocationServices;
  * Created by kalyandechiraju on 14/05/16.
  */
 public class LocationUpdateService extends Service implements LocationListener, GoogleApiClient.ConnectionCallbacks {
-    PowerManager.WakeLock wakeLock;
+    //PowerManager.WakeLock wakeLock;
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
 
@@ -41,8 +40,8 @@ public class LocationUpdateService extends Service implements LocationListener, 
         super.onCreate();
 
         //Wake Lock to send in background
-        PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
-        wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "DoNotSleep");
+        //PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
+        //wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "DoNotSleep");
 
         // Create an instance of GoogleAPIClient.
         if (mGoogleApiClient == null) {
@@ -78,10 +77,11 @@ public class LocationUpdateService extends Service implements LocationListener, 
                 currentDelBoyRef.child("currentLocation").setValue(location.getLatitude() + Constants.LOCATION_DELIMITER + location.getLongitude());
             } else {
                 Toast.makeText(LocationUpdateService.this, "Location Change failed because of null user", Toast.LENGTH_SHORT).show();
+                stopSelf();
             }
         }
         if(Prefs.getString(Constants.CURRENT_DELBOY, null) == null) {
-            wakeLock.release();
+            //wakeLock.release();
             stopSelf();
         }
     }
@@ -95,18 +95,19 @@ public class LocationUpdateService extends Service implements LocationListener, 
             Toast.makeText(LocationUpdateService.this, "Location Services called", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(LocationUpdateService.this, "Location Services calling failed", Toast.LENGTH_SHORT).show();
+            stopSelf();
         }
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-
+        stopSelf();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        wakeLock.release();
+        //wakeLock.release();
         LocationServices.FusedLocationApi.removeLocationUpdates(
                 mGoogleApiClient, this);
     }

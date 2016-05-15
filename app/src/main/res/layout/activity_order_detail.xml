@@ -75,7 +75,43 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:text="User Location"
+                android:text="Delivered By"
+                android:textColor="@color/colorAccent"
+                style="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:id="@+id/order_delBoy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                style="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Ordered By"
+                android:textColor="@color/colorAccent"
+                style="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:id="@+id/order_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                style="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:id="@+id/order_details_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Location"
+                android:visibility="gone"
                 android:textColor="@color/colorAccent"
                 style="@style/TextAppearance.AppCompat.Large"/>
 
@@ -85,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center"
-                android:contentDescription="User Location"
+                android:contentDescription="Location"
                 />
 
         </LinearLayout>

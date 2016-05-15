@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.challengers.trackmyorder.util.Constants;
 
-public class LoginDBoy extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText userIdEditText,userPassEditText;
     String userName,userPass, loginType;
     @Override
@@ -20,22 +20,30 @@ public class LoginDBoy extends AppCompatActivity {
         userIdEditText = (EditText) findViewById(R.id.userName);
         userPassEditText = (EditText) findViewById(R.id.userPass);
 
+        loginType = getIntent().getStringExtra(Constants.LOGINTYPE);
     }
 
     public void doLogin(View v){
         userName = userIdEditText.getText().toString();
         userPass = userPassEditText.getText().toString();
         String usernameString = "delboy1";
-        if(loginType == "D") {
+        if(loginType.equals("D")) {
             if (userName.equals(usernameString) && userPass.equals("d")) {
-                Intent intent = new Intent(this, DBoy_main_menu.class);
+                Intent intent = new Intent(this, DboyActivity.class);
                 intent.putExtra(Constants.CURRENT_DELBOY, usernameString);
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Wrong Username or Password", Toast.LENGTH_SHORT).show();
             }
         } else {
-            //GO to User orders page
+            String userId = "kalyan123";
+            if (userName.equals(userId) && userPass.equals("k")) {
+                Intent intent = new Intent(this, ShowUserOrdersActivity.class);
+                intent.putExtra(Constants.CURRENT_USER, userId);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Wrong Username or Password", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }

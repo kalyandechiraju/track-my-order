@@ -20,8 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginDBoy" />
-        <activity android:name=".DBoy_main_menu" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".DboyActivity" />
         <activity android:name=".UpdateOrderActivity" />
 
         <service
