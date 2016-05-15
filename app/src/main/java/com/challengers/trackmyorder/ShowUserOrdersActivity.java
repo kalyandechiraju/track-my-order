@@ -75,7 +75,7 @@ public class ShowUserOrdersActivity extends AppCompatActivity {
         String orders[];
         public CustomUserOrderArrayAdapter(Context ctx,String[] ordersList) {
 
-            super(ctx,R.layout.single_row_to_show_user_order,R.id.text1,ordersList);
+            super(ctx,R.layout.user_order_list_item,R.id.text1,ordersList);
             this.ctx = ctx;
             this.orders = ordersList;
         }
@@ -85,7 +85,7 @@ public class ShowUserOrdersActivity extends AppCompatActivity {
             View row = convertView;
             if(row == null) {
                 LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                row = layoutInflater.inflate(R.layout.single_row_to_show_user_order, parent, false);
+                row = layoutInflater.inflate(R.layout.user_order_list_item, parent, false);
             }
             TextView textView = (TextView) row.findViewById(R.id.text1);
             textView.setText(orders[position]);

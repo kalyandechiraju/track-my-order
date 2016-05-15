@@ -11,7 +11,4 @@
         android:layout_height="match_parent"
         tools:context="com.challengers.trackmyorder.MapsActivity" />
 
-
-
-
 </RelativeLayout>
