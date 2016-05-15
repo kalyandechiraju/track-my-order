@@ -25,3 +25,12 @@ This module can be implemented in other existing apps of delivery vendors.
 ##Flow
 
 ![applicaition-flow](https://raw.githubusercontent.com/kalyandechiraju/track-my-order/master/ScreenShot2016-05-15.png)
+
+##Further plan
+
+- We can extend this further by **auto allocating orders** to delivery boys (who is on the move) based on their current location and the order pickup location. Thus `optimising` the delivery process.
+
+
+##Where are we
+
+The implementation of the app is completed except for the part of Notifications. Little bit tweaking is needed to update the location of delivery boy and send the Notification based on the distance between the Customer's location and the Delivery Boy's.
