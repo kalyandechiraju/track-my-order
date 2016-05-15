@@ -11,7 +11,7 @@ import com.challengers.trackmyorder.util.Constants;
 
 public class LoginDBoy extends AppCompatActivity {
     EditText userIdEditText,userPassEditText;
-    String userName,userPass;
+    String userName,userPass, loginType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,18 +19,24 @@ public class LoginDBoy extends AppCompatActivity {
         setTitle("Login");
         userIdEditText = (EditText) findViewById(R.id.userName);
         userPassEditText = (EditText) findViewById(R.id.userPass);
+
     }
 
     public void doLogin(View v){
         userName = userIdEditText.getText().toString();
         userPass = userPassEditText.getText().toString();
         String usernameString = "delboy1";
-        if(userName.equals(usernameString) && userPass.equals("d")) {
-            Intent intent = new Intent(this, DBoy_main_menu.class);
-            intent.putExtra(Constants.CURRENT_DELBOY, usernameString);
-            startActivity(intent);
+        if(loginType == "D") {
+            if (userName.equals(usernameString) && userPass.equals("d")) {
+                Intent intent = new Intent(this, DBoy_main_menu.class);
+                intent.putExtra(Constants.CURRENT_DELBOY, usernameString);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Wrong Username or Password", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this,"Wrong Username or Password",Toast.LENGTH_SHORT).show();
+            //GO to User orders page
         }
+
     }
 }

@@ -1,12 +1,14 @@
 package com.challengers.trackmyorder;
 
 import android.app.Application;
+import android.content.ContextWrapper;
 
 import com.challengers.trackmyorder.model.DelBoy;
 import com.challengers.trackmyorder.model.Order;
 import com.challengers.trackmyorder.model.User;
 import com.challengers.trackmyorder.util.Constants;
 import com.challengers.trackmyorder.util.Prefs;
+import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,19 @@ public class AppClass extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //Firebase Init
+        Firebase.setAndroidContext(this);
+
+        /*
+        * This is to initialize a wrapper class for saving the preferences.
+        * */
+        new Prefs.Builder()
+                .setContext(this)
+                .setMode(ContextWrapper.MODE_PRIVATE)
+                .setPrefsName(getPackageName())
+                .setUseDefaultSharedPreference(true)
+                .build();
+
         RealmConfiguration config = new RealmConfiguration.Builder(this)
                 .name("trackmyorder.realm")
                 .build();
@@ -81,7 +96,7 @@ public class AppClass extends Application {
         delBoy.setCurrentOrderIds(orderIdList);
 
         User user = new User();
-        user.setUserId("user101");
+        user.setUserId("kalyan123");
         user.setUsername("Kalyan");
         user.setCurrentOrderId(order1.getOrderId());
 
@@ -90,11 +105,23 @@ public class AppClass extends Application {
         user1.setUsername("Chandan");
         user1.setCurrentOrderId(order.getOrderId());
 
+        User user2 = new User();
+        user2.setUserId("user103");
+        user2.setUsername("Chandan");
+        user2.setCurrentOrderId(order2.getOrderId());
+
+        User user3 = new User();
+        user3.setUserId("user104");
+        user3.setUsername("Chandan");
+        user3.setCurrentOrderId(order3.getOrderId());
+
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(delBoy);
         realm.copyToRealmOrUpdate(orderList);
         realm.copyToRealmOrUpdate(user);
         realm.copyToRealmOrUpdate(user1);
+        realm.copyToRealmOrUpdate(user2);
+        realm.copyToRealmOrUpdate(user3);
         realm.commitTransaction();
 
         Prefs.putBoolean(Constants.FIRST_RUN_KEY, false);

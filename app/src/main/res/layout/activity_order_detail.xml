@@ -10,24 +10,85 @@
     android:orientation="vertical"
     tools:context="com.challengers.trackmyorder.OrderDetailActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Order Id"
-        style="@style/TextAppearance.AppCompat.Large"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Order Id"
+                android:textColor="@color/colorAccent"
+                style="@style/TextAppearance.AppCompat.Large"/>
 
-    <TextView
-        android:id="@+id/order_detail_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:text="order1001"
-        style="@style/TextAppearance.AppCompat.Medium"/>
+            <TextView
+                android:id="@+id/order_detail_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="order1001"
+                style="@style/TextAppearance.AppCompat.Medium"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Item in the Order"
+                android:textColor="@color/colorAccent"
+                style="@style/TextAppearance.AppCompat.Large"/>
 
+            <TextView
+                android:id="@+id/order_detail_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Item"
+                style="@style/TextAppearance.AppCompat.Medium"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Current Status"
+                android:textColor="@color/colorAccent"
+                style="@style/TextAppearance.AppCompat.Large"/>
 
+            <TextView
+                android:id="@+id/order_detail_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Picked Up"
+                style="@style/TextAppearance.AppCompat.Medium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="User Location"
+                android:textColor="@color/colorAccent"
+                style="@style/TextAppearance.AppCompat.Large"/>
+
+            <ImageView
+                android:id="@+id/user_location_static_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:contentDescription="User Location"
+                />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

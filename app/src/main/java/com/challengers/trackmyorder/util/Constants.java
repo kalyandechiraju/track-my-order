@@ -10,6 +10,7 @@ public class Constants {
     public static final String FIRST_RUN_KEY = "first_run";
     public static final String CURRENT_DELBOY = "current_delboy";
     public static final String ORDER_ID = "order_id";
+    public static final String MAPS_TYPE = "maps_type";
     public static Firebase rootRef = new Firebase("https://track-my-order.firebaseio.com/");
     public static Firebase delboyRef = rootRef.child("/delboy/");
     public static Firebase orderRef = rootRef.child("/order/");

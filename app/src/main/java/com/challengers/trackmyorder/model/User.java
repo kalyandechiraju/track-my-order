@@ -1,12 +1,14 @@
 package com.challengers.trackmyorder.model;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Copyright (c) 2016 Kalyan Dechiraju
  * Created by kalyandechiraju on 14/05/16.
  */
 public class User extends RealmObject{
+    @PrimaryKey
     private String userId;
     private String username;
     private String currentOrderId;
