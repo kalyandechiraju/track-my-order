@@ -41,15 +41,14 @@ public class AppClass extends Application {
                 .name("trackmyorder.realm")
                 .build();
         Realm.setDefaultConfiguration(config);
-        populateDummyData();
 
-        if(Prefs.contains(Constants.FIRST_RUN_KEY)) {
+        /*if(Prefs.contains(Constants.FIRST_RUN_KEY)) {
             if(Prefs.getBoolean(Constants.FIRST_RUN_KEY, true)) {
                 populateDummyData();
             }
         } else {
             populateDummyData();
-        }
+        }*/
     }
 
     private void populateDummyData() {

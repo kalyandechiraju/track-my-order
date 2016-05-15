@@ -441,7 +441,6 @@ public final class Prefs {
          * packagename.xml but it can be modified for migration purposes or customization.
          *
          * @param prefsName the filename used for the SharedPreference
-         * @return the {@link //com.pixplicity.easyprefs.library.Prefs.Builder} object.
          */
         public Builder setPrefsName(final String prefsName) {
             mKey = prefsName;
@@ -452,7 +451,6 @@ public final class Prefs {
          * Set the Context used to instantiate the SharedPreferences
          *
          * @param context the application context
-         * @return the {@link //com.pixplicity.easyprefs.library.Prefs.Builder} object.
          */
         public Builder setContext(final Context context) {
             mContext = context;
@@ -464,7 +462,6 @@ public final class Prefs {
          *
          * @param mode Operating mode.  Use 0 or {@link Context#MODE_PRIVATE} for the
          *             default operation, {@link Context#MODE_WORLD_READABLE}
-         * @return the {@link //com.pixplicity.easyprefs.library.Prefs.Builder} object.
          * @see Context#getSharedPreferences
          */
         public Builder setMode(final int mode) {
