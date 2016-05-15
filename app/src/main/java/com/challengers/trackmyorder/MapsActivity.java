@@ -1,6 +1,8 @@
 package com.challengers.trackmyorder;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +21,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -119,8 +122,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         }
                         String latLang = (String) dataSnapshot.child("currentLocation").getValue();
                         delBoyLocation = latLang;
+                        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_directions_bike_black_24dp);
                         LatLng location = new LatLng(Double.parseDouble(latLang.split(Constants.LOCATION_DELIMITER)[0]), Double.parseDouble(latLang.split(Constants.LOCATION_DELIMITER)[1]));
-                        lastMarker = mMap.addMarker(new MarkerOptions().position(location).title("Your Order is here"));
+                        lastMarker = mMap.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromBitmap(icon)).position(location).title("Your Order is here"));
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
                         // Zoom out to zoom level 10, animating with a duration of 1 second.
                         mMap.animateCamera(CameraUpdateFactory.zoomTo(14), 1000, null);
