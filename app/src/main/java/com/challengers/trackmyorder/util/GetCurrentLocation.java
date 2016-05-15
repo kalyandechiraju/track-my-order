@@ -20,6 +20,7 @@ import com.google.android.gms.location.LocationServices;
  * Copyright (c) 2016 Kalyan Dechiraju
  * Created by kalyandechiraju on 14/05/16.
  */
+@Deprecated
 public class GetCurrentLocation implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     private Context context;
     private GoogleApiClient mGoogleApiClient;
